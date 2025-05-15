@@ -31,14 +31,6 @@ Sua missão é criar uma aplicação React com uma lista de galáxias, onde o us
 - Consumir dados via GraphQL (com mocks)
 - Utilizar Material-UI para estilização
 
-🧩 Tecnologias obrigatórias
-
-- React
-- Redux (sem toolkit)
-- Apollo Client
-- Material-UI
-- GraphQL
-
 ✅ Requisitos técnicos
 
 - O campo de busca deve filtrar galáxias por nome.
