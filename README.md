@@ -4,8 +4,8 @@ Sua missão é criar uma aplicação React com uma lista de galáxias, onde o us
 
 **Frontend:**
 
-- (Galaxies Frontend Challenge)[https://github.com/GalaxiesGG/frontend-test/blob/main/frontend/README.md]
+- [Galaxies Frontend Challenge](https://github.com/GalaxiesGG/frontend-test/blob/main/frontend/README.md)
 
 **Backend:**
 
-- (Documentação backend)[https://github.com/GalaxiesGG/frontend-test/blob/main/backend/README.md]
+- [Documentação backend](https://github.com/GalaxiesGG/frontend-test/blob/main/backend/README.md)
