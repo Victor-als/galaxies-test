@@ -1,0 +1,21 @@
+🪐 Galaxies Frontend Challenge (Júnior)
+🎯 Objetivos
+
+Mostrar uma lista de galáxias (nome + número de estrelas).
+Implementar busca por nome.
+Exibir detalhes da galáxia selecionada ao lado da lista.
+Layout simples, responsivo e agradável com Material UI.
+
+🧩 Tecnologias obrigatórias
+
+- React (Vite ou CRA).
+- Material UI (MUI).
+- Estado local do React (useState, useEffect, useMemo).
+
+Não é necessário Redux.
+
+📦 Dados (mock)
+
+Use um arquivo local JSON (ex.: public/galaxies.json) ou um array no código.
+
+Simule “busca” lendo esse JSON e filtrando no front-end.
