@@ -1,17 +1,22 @@
-import { ApolloProvider } from '@apollo/client/react'
-import { Home } from './pages/Home'
-import { client } from './api/appolloClient.'
+
+import { ApolloProvider } from "@apollo/client/react";
+import { Home } from "./pages/Home";
+
+import { ThemeProvider, CssBaseline } from "@mui/material";
+import { darkTheme } from "./theme";
+import { client } from "./api/appolloClient.";
+import { Header } from "./components/Header";
 
 function App() {
-
-
   return (
-    <>
-      <ApolloProvider client={client}>
-        <Home/>
-      </ApolloProvider>
-    </>
-  )
+    <ApolloProvider client={client}>
+      <ThemeProvider theme={darkTheme}>
+        <CssBaseline /> 
+        <Header />
+        <Home />
+      </ThemeProvider>
+    </ApolloProvider>
+  );
 }
 
-export default App
+export default App;

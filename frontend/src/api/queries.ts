@@ -1,14 +1,14 @@
 import { gql } from "@apollo/client";
 
 export const GET_ALL_GALAXIES = gql`
-query {
-  items(offset: 0, limit: 1000) {
-    id
-    name
-    description
-    image
-    details
-    stars
+  query GetAllGalaxies($search: String, $offset: Int, $limit: Int) {
+    items(search: $search, offset: $offset, limit: $limit) {
+      id
+      name
+      description
+      details
+      image
+      stars
+    }
   }
-}
 `;
