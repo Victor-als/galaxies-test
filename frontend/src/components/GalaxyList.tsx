@@ -1,0 +1,53 @@
+import { Box, TextField, Pagination } from "@mui/material";
+import type { Galaxy } from "../types/types";
+import { GalaxyCard } from "./GalaxyCard";
+
+interface Props {
+  galaxies: Galaxy[];
+  selectedId: string | null;
+  setSelectedId: (id: string | null) => void;
+  search: string;
+  setSearch: (value: string) => void;
+  page: number;
+  setPage: (value: number) => void;
+  itemsPerPage: number;
+}
+
+export function GalaxyList({ galaxies, selectedId, setSelectedId, search, setSearch, page, setPage, itemsPerPage }: Props) {
+  const startIndex = (page - 1) * itemsPerPage;
+  const paginatedGalaxies = galaxies.slice(startIndex, startIndex + itemsPerPage);
+  const pageCount = Math.ceil(galaxies.length / itemsPerPage);
+
+  return (
+    <Box flex="1 1 300px" maxWidth={400} display="flex" flexDirection="column" gap={2}>
+      <TextField
+        fullWidth
+        size="small"
+        label="Buscar galáxia"
+        value={search}
+        onChange={(e) => {
+          setSearch(e.target.value);
+          setPage(1);
+        }}
+        placeholder="Digite o nome (ex.: Andromeda)"
+      />
+
+      <Box display="flex" flexDirection="column" gap={2}>
+        {paginatedGalaxies.map((g) => (
+          <GalaxyCard
+            key={g.id}
+            galaxy={g}
+            isSelected={selectedId === g.id}
+            onClick={() => setSelectedId(selectedId === g.id ? null : g.id)}
+          />
+        ))}
+      </Box>
+
+      {pageCount > 1 && (
+        <Box mt={2} display="flex" justifyContent="center">
+          <Pagination count={pageCount} page={page} onChange={(_, value) => setPage(value)} color="primary" />
+        </Box>
+      )}
+    </Box>
+  );
+}
