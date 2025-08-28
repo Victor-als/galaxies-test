@@ -43,14 +43,17 @@ Responsividade com Drawer no mobile.
 ```sh
 $ git clone https://github.com/Victor-als/galaxies-test
 ```
-
-2. Instale as dependências:
+2. Entre na pasta frontend:
+```sh
+cd frontend
+```
+3. Instale as dependências:
 
 ```sh
 npm install
 ```
 
-3. Rode o projeto:
+4. Rode o projeto:
 
 ```sh
 npm run dev
