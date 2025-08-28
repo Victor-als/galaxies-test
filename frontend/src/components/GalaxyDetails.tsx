@@ -1,12 +1,28 @@
-import { Card, CardContent, CardMedia, Typography, Box, Chip } from "@mui/material";
+import { Card, CardContent, CardMedia, Typography, Box, Chip, Skeleton } from "@mui/material";
 import StarIcon from '@mui/icons-material/Star';
 import type { Galaxy } from "../types/types";
 
 interface Props {
   galaxy: Galaxy | null;
+  loading?: boolean;
 }
 
-export function GalaxyDetails({ galaxy }: Props) {
+export function GalaxyDetails({ galaxy, loading }: Props) {
+  if (loading) {
+    return (
+      <Card sx={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", p: 2 }}>
+        <Skeleton variant="rectangular" height={200} animation="wave" />
+        <Box mt={1} display="flex" flexDirection="column" gap={1}>
+          <Skeleton variant="text" height={30} width="60%" animation="wave" />
+          <Skeleton variant="text" height={20} width="80%" animation="wave" />
+          <Skeleton variant="text" height={20} width="40%" animation="wave" />
+          <Skeleton variant="rectangular" height={20} width="100%" animation="wave" />
+          <Skeleton variant="rectangular" height={20} width="100%" animation="wave" />
+        </Box>
+      </Card>
+    );
+  }
+
   if (!galaxy)
     return <Typography color="text.secondary">Selecione uma galáxia para ver detalhes</Typography>;
 
@@ -32,7 +48,6 @@ export function GalaxyDetails({ galaxy }: Props) {
             {galaxy.details}
           </Typography>
         </Box>
-
 
         <Box sx={{ mt: 2, display: "flex", alignItems: "center", gap: 1 }}>
           <StarIcon color="warning" />

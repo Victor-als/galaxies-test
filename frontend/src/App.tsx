@@ -1,6 +1,6 @@
 
 import { ApolloProvider } from "@apollo/client/react";
-import { Home } from "./pages/Home";
+import { Home } from "./pages/Home/Home";
 
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import { darkTheme } from "./theme";
