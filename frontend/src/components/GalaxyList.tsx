@@ -1,6 +1,8 @@
-import { Box, TextField, Pagination } from "@mui/material";
+import { Box, TextField, InputAdornment, Pagination } from "@mui/material";
 import type { Galaxy } from "../types/types";
 import { GalaxyCard } from "./GalaxyCard";
+import SearchIcon from '@mui/icons-material/Search';
+
 
 interface Props {
   galaxies: Galaxy[];
@@ -30,8 +32,16 @@ export function GalaxyList({ galaxies, selectedId, setSelectedId, search, setSea
           setPage(1);
         }}
         placeholder="Digite o nome (ex.: Andromeda)"
+        slotProps={{
+          input: {
+            startAdornment: (
+              <InputAdornment position="start">
+                <SearchIcon />
+              </InputAdornment>
+            ),
+          }
+        }}
       />
-
       <Box display="flex" flexDirection="column" gap={2}>
         {paginatedGalaxies.map((g) => (
           <GalaxyCard

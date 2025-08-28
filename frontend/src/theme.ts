@@ -4,10 +4,7 @@ export const darkTheme = createTheme({
   palette: {
     mode: "dark",
     primary: {
-      main: "#6b777cff", // cinza azulado neutro
-    },
-    secondary: {
-      main: "#ff7043", // laranja suave
+      main: "#535e63be", // cinza azulado neutro
     },
     background: {
       default: "#121212", // fundo geral escuro
