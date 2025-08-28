@@ -1,4 +1,3 @@
-// Home.tsx
 import { useState, useMemo, useEffect } from "react";
 import { useQuery } from "@apollo/client/react";
 import {
